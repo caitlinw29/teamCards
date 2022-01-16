@@ -21,13 +21,13 @@ function generateHTML(data) {
         <div class="col">
           <div class="card h-100 text-start">
             <div class="card-header bg-primary text-white">
-              <p class="card-text p-1 m-1">Card title</p>
-              <p class="card-text p-1 m-1"> <i class="fas fa-coffee"></i>&nbsp; Manager</p>
+              <p class="card-text p-1 m-1">${data.manager}</p>
+              <p class="card-text p-1 m-1"> <i class="fas fa-coffee"></i>  Manager</p>
             </div>
             <div class="card-body bg-custom-gray p-4">
-              <p class="card-text bg-light p-3 m-1">Card title</p>
-              <p class="card-text bg-light p-3 m-1">ID.</p>
-              <p class="card-text bg-light p-3 m-1">ID</p>
+              <p class="card-text bg-light p-3 m-1">ID: ${data.managerID}</p>
+              <p class="card-text bg-light p-3 m-1">Email: <a href="${data.managerEmail}">${data.managerEmail}</a></p>
+              <p class="card-text bg-light p-3 m-1">Office Number: ${data.managerOffice}</p>
             </div>
           </div>
         </div>
@@ -35,7 +35,7 @@ function generateHTML(data) {
           <div class="card h-100 text-start">
             <div class="card-header bg-primary text-white">
               <p class="card-text p-1 m-1">Card title</p>
-              <p class="card-text p-1 m-1"><i class="far fa-glasses"></i>&nbsp; Engineer</p>
+              <p class="card-text p-1 m-1"><i class="far fa-glasses"></i>  Engineer</p>
             </div>
             <div class="card-body bg-custom-gray p-4">
               <p class="card-text bg-light p-3 m-1">Card title</p>
@@ -48,7 +48,7 @@ function generateHTML(data) {
           <div class="card h-100 text-start">
             <div class="card-header bg-primary text-white">
               <p class="card-text p-1 m-1">Card title</p>
-              <p class="card-text p-1 m-1"><i class="fas fa-user-graduate"></i>&nbsp; Intern</p>
+              <p class="card-text p-1 m-1"><i class="fas fa-user-graduate"></i>  Intern</p>
             </div>
             <div class="card-body bg-custom-gray p-4">
               <p class="card-text bg-white p-3 m-1">Card title</p>
