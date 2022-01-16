@@ -1,0 +1,16 @@
+.bg-custom-gray {
+  background: #DCDCE0; 
+}
+
+.card-body p {
+  font-size: 14px;
+}
+
+.card-header p {
+  font-size: 20px;
+}
+
+.card-header p:first-child {
+  font-weight: 500;
+  font-size: 24px;
+}
