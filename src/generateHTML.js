@@ -1,11 +1,11 @@
 //generate index.html
-function generateHTML(data) {
+function generateHTML(teamName, ) {
   return `<!DOCTYPE html>
   <html lang="en">
     <head>
       <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <title>${data.team} Profiles</title>
+      <title>${teamName} Profiles</title>
       <meta name="description" content="Team Cards is a Node.js command-line application that takes in information about employees on a software engineering team, then generates an HTML webpage that displays summaries for each person in a card.">
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <link rel="icon" type="image/png" href="../dist/img/teamProfileLogo.png">
@@ -15,19 +15,19 @@ function generateHTML(data) {
     </head>
     <body class="container-fluid text-center m-0 p-0">
       <header class="bg-dark text-white py-1">
-        <h1 class="display-1">${data.team}</h1>
+        <h1 class="display-1">${teamName}</h1>
       </header>
       <div class="row row-cols-1 row-cols-md-3 g-4 mx-5 my-3 py-3 justify-content-center">
         <div class="col">
           <div class="card h-100 text-start">
             <div class="card-header bg-primary text-white">
-              <p class="card-text p-1 m-1">${data.manager}</p>
+              <p class="card-text p-1 m-1"></p>
               <p class="card-text p-1 m-1"> <i class="fas fa-coffee"></i>  Manager</p>
             </div>
             <div class="card-body bg-custom-gray p-4">
-              <p class="card-text bg-light p-3 m-1">ID: ${data.managerID}</p>
-              <p class="card-text bg-light p-3 m-1">Email: <a href="mailto:${data.managerEmail}">${data.managerEmail}</a></p>
-              <p class="card-text bg-light p-3 m-1">Office Number: ${data.managerOffice}</p>
+              <p class="card-text bg-light p-3 m-1">ID: </p>
+              <p class="card-text bg-light p-3 m-1">Email: <a href="mailto:"></a></p>
+              <p class="card-text bg-light p-3 m-1">Office Number: </p>
             </div>
           </div>
         </div>
