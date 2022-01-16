@@ -1,0 +1,26 @@
+{
+  "name": "teamcards",
+  "version": "1.0.0",
+  "description": "Team Cards is a Node.js command-line application that takes in information about employees on a software engineering team, then generates an HTML webpage that displays summaries for each person in a card.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "start": "index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/caitlinw29/teamCards.git"
+  },
+  "keywords": [],
+  "author": "Caitlin Wall",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/caitlinw29/teamCards/issues"
+  },
+  "homepage": "https://github.com/caitlinw29/teamCards#readme",
+  "dependencies": {
+    "bootstrap": "^5.1.3",
+    "inquirer": "^8.2.0",
+    "jest": "^27.4.7"
+  }
+}
