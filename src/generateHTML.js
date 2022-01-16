@@ -26,7 +26,7 @@ function generateHTML(data) {
             </div>
             <div class="card-body bg-custom-gray p-4">
               <p class="card-text bg-light p-3 m-1">ID: ${data.managerID}</p>
-              <p class="card-text bg-light p-3 m-1">Email: <a href="${data.managerEmail}">${data.managerEmail}</a></p>
+              <p class="card-text bg-light p-3 m-1">Email: <a href="mailto:${data.managerEmail}">${data.managerEmail}</a></p>
               <p class="card-text bg-light p-3 m-1">Office Number: ${data.managerOffice}</p>
             </div>
           </div>
