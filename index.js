@@ -94,7 +94,7 @@ function makeEngineer(){
       {
         type: 'input',
         name: 'engineerGithub',
-        message: "What is this engineer's GitHub?",
+        message: "What is this engineer's GitHub username?",
       },
     ])
     .then((data) => {
@@ -139,10 +139,7 @@ function makeIntern(){
 
 //create profiles by plugging the information into the generateHTML function that was imported.
 function createProfiles(){
-  writeToFile("./dist/index.html", generateHTML(
-    teamName,
-    teamMembers
-  ));
+  writeToFile("./dist/index.html", generateHTML(teamName, teamMembers));
 }
 
 //Set up function to write answers in file
