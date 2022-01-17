@@ -1,5 +1,56 @@
+function generateManager(){
+  return `<div class="col">
+  <div class="card h-100 text-start">
+    <div class="card-header bg-primary text-white">
+      <p class="card-text p-1 m-1"></p>
+      <p class="card-text p-1 m-1"> <i class="fas fa-coffee"></i>  Manager</p>
+    </div>
+    <div class="card-body bg-custom-gray p-4">
+      <p class="card-text bg-light p-3 m-1">ID: </p>
+      <p class="card-text bg-light p-3 m-1">Email: <a href="mailto:"></a></p>
+      <p class="card-text bg-light p-3 m-1">Office Number: </p>
+    </div>
+  </div>
+</div>`
+}
+
+function generateIntern(){
+  return `<div class="col">
+  <div class="card h-100 text-start">
+    <div class="card-header bg-primary text-white">
+      <p class="card-text p-1 m-1">Card title</p>
+      <p class="card-text p-1 m-1"><i class="fas fa-user-graduate"></i>  Intern</p>
+    </div>
+    <div class="card-body bg-custom-gray p-4">
+      <p class="card-text bg-white p-3 m-1">Card title</p>
+      <p class="card-text bg-white p-3 m-1">ID</p>
+      <p class="card-text bg-white p-3 m-1">ID</p>
+    </div>
+  </div>
+</div>`
+}
+
+function generateEngineer(){
+  return `<div class="col">
+  <div class="card h-100 text-start">
+    <div class="card-header bg-primary text-white">
+      <p class="card-text p-1 m-1">Card title</p>
+      <p class="card-text p-1 m-1"><i class="far fa-glasses"></i>  Engineer</p>
+    </div>
+    <div class="card-body bg-custom-gray p-4">
+      <p class="card-text bg-light p-3 m-1">Card title</p>
+      <p class="card-text bg-light p-3 m-1">This is a short card.</p>
+      <p class="card-text bg-light p-3 m-1">ID</p>
+    </div>
+  </div>
+</div>`
+}
+
+
+
+
 //generate index.html
-function generateHTML(teamName, ) {
+function generateHTML(teamName, team) {
   return `<!DOCTYPE html>
   <html lang="en">
     <head>
@@ -18,71 +69,7 @@ function generateHTML(teamName, ) {
         <h1 class="display-1">${teamName}</h1>
       </header>
       <div class="row row-cols-1 row-cols-md-3 g-4 mx-5 my-3 py-3 justify-content-center">
-        <div class="col">
-          <div class="card h-100 text-start">
-            <div class="card-header bg-primary text-white">
-              <p class="card-text p-1 m-1"></p>
-              <p class="card-text p-1 m-1"> <i class="fas fa-coffee"></i>  Manager</p>
-            </div>
-            <div class="card-body bg-custom-gray p-4">
-              <p class="card-text bg-light p-3 m-1">ID: </p>
-              <p class="card-text bg-light p-3 m-1">Email: <a href="mailto:"></a></p>
-              <p class="card-text bg-light p-3 m-1">Office Number: </p>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card h-100 text-start">
-            <div class="card-header bg-primary text-white">
-              <p class="card-text p-1 m-1">Card title</p>
-              <p class="card-text p-1 m-1"><i class="far fa-glasses"></i>  Engineer</p>
-            </div>
-            <div class="card-body bg-custom-gray p-4">
-              <p class="card-text bg-light p-3 m-1">Card title</p>
-              <p class="card-text bg-light p-3 m-1">This is a short card.</p>
-              <p class="card-text bg-light p-3 m-1">ID</p>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card h-100 text-start">
-            <div class="card-header bg-primary text-white">
-              <p class="card-text p-1 m-1">Card title</p>
-              <p class="card-text p-1 m-1"><i class="fas fa-user-graduate"></i>  Intern</p>
-            </div>
-            <div class="card-body bg-custom-gray p-4">
-              <p class="card-text bg-white p-3 m-1">Card title</p>
-              <p class="card-text bg-white p-3 m-1">ID</p>
-              <p class="card-text bg-white p-3 m-1">ID</p>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card h-100 text-start">
-            <div class="card-header bg-primary text-white">
-              <p class="card-text p-1 m-1">Card title</p>
-              <p class="card-text p-1 m-1">ID.</p>
-            </div>
-            <div class="card-body bg-custom-gray p-4">
-              <p class="card-text bg-light p-3 m-1">Card title</p>
-              <p class="card-text bg-light p-3 m-1">ID</p>
-              <p class="card-text bg-light p-3 m-1">ID</p>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card h-100 text-start">
-            <div class="card-header bg-primary text-white">
-              <p class="card-text p-1 m-1">Card title</p>
-              <p class="card-text p-1 m-1">ID.</p>
-            </div>
-            <div class="card-body bg-custom-gray p-4">
-              <p class="card-text bg-light p-3 m-1">Card title</p>
-              <p class="card-text bg-light p-3 m-1">ID</p>
-              <p class="card-text bg-light p-3 m-1">ID</p>
-            </div>
-          </div>
-        </div>
+        ${team}
       </div>
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
@@ -90,6 +77,5 @@ function generateHTML(teamName, ) {
   </html>
 `;
 }
-
-//export the markdown so it can be pulled in index.js - default is for imports and exports to match
 module.exports = generateHTML;
+
