@@ -1,13 +1,19 @@
 function generateHTML(teamName, teamArray){
   const team = [];
   for(const member of teamArray){
-    console.log(member);
     if(member.getRole() === "Manager"){
       const managerCard = generateManager(member);
       team.push(managerCard);
+    } else if(member.getRole() === "Engineer"){
+      const engineerCard = generateEngineer(member);
+      team.push(engineerCard);
+    } else if(member.getRole() === "Intern"){
+      const internCard = generateIntern(member);
+      team.push(internCard);
     }
   }
-  return generateFinal(teamName, team);
+  const noCommaTeam = team.join('');
+  return generateFinal(teamName, noCommaTeam);
 
   function generateManager(manager){
     return `<div class="col">
@@ -18,40 +24,40 @@ function generateHTML(teamName, teamArray){
       </div>
       <div class="card-body bg-custom-gray p-4">
         <p class="card-text bg-light p-3 m-1">ID: ${manager.id}</p>
-        <p class="card-text bg-light p-3 m-1">Email: ${manager.email} <a href="mailto:${manager.email}"></a></p>
+        <p class="card-text bg-light p-3 m-1">Email: <a href="mailto:${manager.email}">${manager.email}</a></p>
         <p class="card-text bg-light p-3 m-1">Office Number: ${manager.officeNumber} </p>
       </div>
     </div>
   </div>`
   }
 
-  function generateIntern(){
+  function generateIntern(intern){
     return `<div class="col">
     <div class="card h-100 text-start">
       <div class="card-header bg-primary text-white">
-        <p class="card-text p-1 m-1">Card title</p>
+        <p class="card-text p-1 m-1">${intern.name}</p>
         <p class="card-text p-1 m-1"><i class="fas fa-user-graduate"></i>  Intern</p>
       </div>
       <div class="card-body bg-custom-gray p-4">
-        <p class="card-text bg-white p-3 m-1">Card title</p>
-        <p class="card-text bg-white p-3 m-1">ID</p>
-        <p class="card-text bg-white p-3 m-1">ID</p>
+        <p class="card-text bg-white p-3 m-1">ID: ${intern.id}</p>
+        <p class="card-text bg-white p-3 m-1">Email: <a href="mailto:${intern.email}"> ${intern.email}</a></p>
+        <p class="card-text bg-white p-3 m-1">School: ${intern.school}</p>
       </div>
     </div>
   </div>`
   }
 
-  function generateEngineer(){
+  function generateEngineer(engineer){
     return `<div class="col">
     <div class="card h-100 text-start">
       <div class="card-header bg-primary text-white">
-        <p class="card-text p-1 m-1">Card title</p>
+        <p class="card-text p-1 m-1">${engineer.name}</p>
         <p class="card-text p-1 m-1"><i class="far fa-glasses"></i>  Engineer</p>
       </div>
       <div class="card-body bg-custom-gray p-4">
-        <p class="card-text bg-light p-3 m-1">Card title</p>
-        <p class="card-text bg-light p-3 m-1">This is a short card.</p>
-        <p class="card-text bg-light p-3 m-1">ID</p>
+        <p class="card-text bg-light p-3 m-1">ID: ${engineer.id}</p>
+        <p class="card-text bg-light p-3 m-1">Email: <a href="mailto:${engineer.email}">${engineer.email}</a></p>
+        <p class="card-text bg-light p-3 m-1">GitHub: <a href="https://github.com/${engineer.github}" target="_blank">${engineer.github}</a></p>
       </div>
     </div>
   </div>`
