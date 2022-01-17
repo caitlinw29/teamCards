@@ -1,14 +1,11 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 const generateHTML = require('./src/generateHTML');
-const Employee = require('./lib/Employee');
 const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
 const Manager = require('./lib/Manager');
+//empty array to hold teamMembers created in inquirer prompts
 const teamMembers = [];
-
-
-
 let teamName;
 
 function startTeamBuilding() {
@@ -41,15 +38,17 @@ function startTeamBuilding() {
         },
       ])
       .then((data) => {
+        //set the team name
         teamName = data.team;
+        //create a manager instance with the data from the prompt
         const manager = new Manager(data.manager, data.managerID, data.managerEmail, data.managerOffice);
+        //add the manager to the teamMembers array
         teamMembers.push(manager);
         chooseTeamMember();        
-        
       });
 }
 
-
+//main menu, will continually loop back here until they choose "I'm finished"
 function chooseTeamMember(){
   inquirer
     .prompt([
@@ -61,7 +60,7 @@ function chooseTeamMember(){
       },
     ])
     .then((choice) => {
-      switch(choice.choices){
+      switch(choice.choiceMenu){
         case "Add an engineer":
           makeEngineer();
           break;
@@ -82,9 +81,26 @@ function makeEngineer(){
         name: "engineerName",
         message: "What is this engineer's name?",
       },
+      {
+        type: "input",
+        name: "engineerID",
+        message: "What is this engineer's ID?",
+      },
+      {
+        type: 'input',
+        name: 'engineerEmail',
+        message: "What is this engineer's email?",
+      },
+      {
+        type: 'input',
+        name: 'engineerGithub',
+        message: "What is this engineer's GitHub?",
+      },
     ])
-    .then((engineer) => {
-
+    .then((data) => {
+        const engineer = new Engineer(data.engineerName, data.engineerID, data.engineerEmail, data.engineerGithub);
+        teamMembers.push(engineer);
+        chooseTeamMember();
     })
 
 }
@@ -102,18 +118,32 @@ function makeIntern(){
         name: "internID",
         message: "What is this intern's ID?",
       },
+      {
+        type: 'input',
+        name: 'internEmail',
+        message: "What is this intern's email?",
+      },
+      {
+        type: 'input',
+        name: 'internSchool',
+        message: "What is this intern's school?",
+      },
     ])
+    .then((data) => {
+        const intern = new Intern(data.internName, data.internID, data.internEmail, data.internSchool);
+        teamMembers.push(intern);
+        chooseTeamMember();
+    })
 
 }
 
+//create profiles by plugging the information into the generateHTML function that was imported.
 function createProfiles(){
   writeToFile("./dist/index.html", generateHTML(
     teamName,
     teamMembers
   ));
 }
-
-
 
 //Set up function to write answers in file
 function writeToFile(fileName, data) {
