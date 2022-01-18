@@ -18,26 +18,57 @@ function startTeamBuilding() {
             type: 'input',
             name: 'team',
             message: 'What is the name of your team?',
+            validate(answer) {
+              if(!answer) {
+                  return "Please provide a team name"
+              }
+              return true
+          }
         },
         {
           type: 'input',
           name: 'manager',
           message: "What is the manager's name?",
+          validate(answer) {
+            if(!answer) {
+                return "Please provide a name"
+            }
+            return true
+        }
         },
         {
           type: 'input',
           name: 'managerID',
           message: "What is the manager's ID?",
+          validate(answer) {
+            if(!answer) {
+                return "Please provide an ID"
+            }
+            return true
+        }
         },
         {
           type: 'input',
           name: 'managerEmail',
           message: "What is the manager's email?",
+          validate(answer) {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+            if(!emailRegex.test(answer)) {
+              return "You have to provide a valid email address!"
+            }
+            return true
+        }
         },
         {
           type: 'input',
           name: 'managerOffice',
           message: "What is the manager's office number?",
+          validate(answer) {
+            if(!answer) {
+                return "Please provide an office number"
+            }
+            return true
+        }
         },
       ])
       .then((data) => {
@@ -85,21 +116,46 @@ function makeEngineer(){
         type: "input",
         name: "engineerName",
         message: "What is this engineer's name?",
+        validate(answer) {
+          if(!answer) {
+              return "Please provide a name"
+          }
+          return true
+      }
       },
       {
         type: "input",
         name: "engineerID",
         message: "What is this engineer's ID?",
+        validate(answer) {
+          if(!answer) {
+              return "Please provide an ID"
+          }
+          return true
+      }
       },
       {
         type: 'input',
         name: 'engineerEmail',
         message: "What is this engineer's email?",
+        validate(answer) {
+          const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+          if(!emailRegex.test(answer)) {
+            return "You have to provide a valid email address!"
+          }
+          return true
+      }
       },
       {
         type: 'input',
         name: 'engineerGithub',
         message: "What is this engineer's GitHub username?",
+        validate(answer) {
+          if(!answer) {
+              return "Please provide a github username"
+          }
+          return true
+      }
       },
     ])
     .then((data) => {
@@ -118,21 +174,46 @@ function makeIntern(){
         type: "input",
         name: "internName",
         message: "What is this intern's name?",
+        validate(answer) {
+          if(!answer) {
+              return "Please provide a name"
+          }
+          return true
+      }
       },
       {
         type: "input",
         name: "internID",
         message: "What is this intern's ID?",
+        validate(answer) {
+          if(!answer) {
+              return "Please provide an ID"
+          }
+          return true
+      }
       },
       {
         type: 'input',
         name: 'internEmail',
         message: "What is this intern's email?",
+        validate(answer) {
+          const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+          if(!emailRegex.test(answer)) {
+            return "You have to provide a valid email address!"
+          }
+          return true
+      }
       },
       {
         type: 'input',
         name: 'internSchool',
         message: "What is this intern's school?",
+        validate(answer) {
+          if(!answer) {
+              return "Please provide a school"
+          }
+          return true
+      }
       },
     ])
     .then((data) => {
