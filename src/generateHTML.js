@@ -19,13 +19,13 @@ function generateHTML(teamName, teamArray){
     return `<div class="col">
     <div class="card h-100 text-start">
       <div class="card-header bg-primary text-white">
-        <p class="card-text p-1 m-1">${manager.name}</p>
+        <p class="card-text p-1 m-1">${manager.getName()}</p>
         <p class="card-text p-1 m-1"> <i class="fas fa-coffee"></i>  Manager</p>
       </div>
       <div class="card-body bg-custom-gray p-4">
-        <p class="card-text bg-light p-3 m-1">ID: ${manager.id}</p>
-        <p class="card-text bg-light p-3 m-1">Email: <a href="mailto:${manager.email}">${manager.email}</a></p>
-        <p class="card-text bg-light p-3 m-1">Office Number: ${manager.officeNumber} </p>
+        <p class="card-text bg-light p-3 m-1">ID: ${manager.getId()}</p>
+        <p class="card-text bg-light p-3 m-1">Email: <a href="mailto:${manager.getEmail()}">${manager.getEmail()}</a></p>
+        <p class="card-text bg-light p-3 m-1">Office Number: ${manager.getOfficeNumber()} </p>
       </div>
     </div>
   </div>`
@@ -35,13 +35,13 @@ function generateHTML(teamName, teamArray){
     return `<div class="col">
     <div class="card h-100 text-start">
       <div class="card-header bg-primary text-white">
-        <p class="card-text p-1 m-1">${intern.name}</p>
+        <p class="card-text p-1 m-1">${intern.getName()}</p>
         <p class="card-text p-1 m-1"><i class="fas fa-user-graduate"></i>  Intern</p>
       </div>
       <div class="card-body bg-custom-gray p-4">
-        <p class="card-text bg-white p-3 m-1">ID: ${intern.id}</p>
-        <p class="card-text bg-white p-3 m-1">Email: <a href="mailto:${intern.email}"> ${intern.email}</a></p>
-        <p class="card-text bg-white p-3 m-1">School: ${intern.school}</p>
+        <p class="card-text bg-white p-3 m-1">ID: ${intern.getId()}</p>
+        <p class="card-text bg-white p-3 m-1">Email: <a href="mailto:${intern.getEmail()}"> ${intern.getEmail()}</a></p>
+        <p class="card-text bg-white p-3 m-1">School: ${intern.getSchool()}</p>
       </div>
     </div>
   </div>`
@@ -51,13 +51,13 @@ function generateHTML(teamName, teamArray){
     return `<div class="col">
     <div class="card h-100 text-start">
       <div class="card-header bg-primary text-white">
-        <p class="card-text p-1 m-1">${engineer.name}</p>
+        <p class="card-text p-1 m-1">${engineer.getName()}</p>
         <p class="card-text p-1 m-1"><i class="far fa-glasses"></i>  Engineer</p>
       </div>
       <div class="card-body bg-custom-gray p-4">
-        <p class="card-text bg-light p-3 m-1">ID: ${engineer.id}</p>
-        <p class="card-text bg-light p-3 m-1">Email: <a href="mailto:${engineer.email}">${engineer.email}</a></p>
-        <p class="card-text bg-light p-3 m-1">GitHub: <a href="https://github.com/${engineer.github}" target="_blank">${engineer.github}</a></p>
+        <p class="card-text bg-light p-3 m-1">ID: ${engineer.getId()}</p>
+        <p class="card-text bg-light p-3 m-1">Email: <a href="mailto:${engineer.getEmail()}">${engineer.getEmail()}</a></p>
+        <p class="card-text bg-light p-3 m-1">GitHub: <a href="https://github.com/${engineer.getGithub()}" target="_blank">${engineer.getGithub()}</a></p>
       </div>
     </div>
   </div>`
