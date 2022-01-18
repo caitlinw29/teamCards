@@ -5,7 +5,7 @@ Team Cards is a Node.js command-line application that takes in information about
 
 * See a sample HTML file - generated using the application - in dist folder
 
-* See the sample HTML live at [Team Cards Sample](https://caitlinw29.github.io/teamCards/)
+* See the sample HTML live at [Team Cards Sample](https://caitlinw29.github.io/teamCards/dist/index.html)
 
 * See [video demo](https://watch.screencastify.com/v/EYXXViX3DEsdolKzDaje) of application
 ## Sample Page and Command Line
