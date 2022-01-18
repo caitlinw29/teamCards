@@ -1,5 +1,8 @@
+//wrap all individual functions in the generateHTML function which gets exported
 function generateHTML(teamName, teamArray){
+  //new array to hold the created cards
   const team = [];
+  //for each member of the team, check which role they have and make a card for that role before pushing the card to the team array
   for(const member of teamArray){
     if(member.getRole() === "Manager"){
       const managerCard = generateManager(member);
@@ -12,9 +15,12 @@ function generateHTML(teamName, teamArray){
       team.push(internCard);
     }
   }
+  //join the team array without commas so that the commas don't render to the page
   const noCommaTeam = team.join('');
+  //generate the Final html page by plugging in the teamName and the cards for the team
   return generateFinal(teamName, noCommaTeam);
 
+  //makes a manager card
   function generateManager(manager){
     return `<div class="col">
     <div class="card h-100 text-start">
@@ -30,7 +36,7 @@ function generateHTML(teamName, teamArray){
     </div>
   </div>`
   }
-
+  //makes intern card
   function generateIntern(intern){
     return `<div class="col">
     <div class="card h-100 text-start">
@@ -46,7 +52,7 @@ function generateHTML(teamName, teamArray){
     </div>
   </div>`
   }
-
+  //makes engineer card
   function generateEngineer(engineer){
     return `<div class="col">
     <div class="card h-100 text-start">
@@ -63,10 +69,7 @@ function generateHTML(teamName, teamArray){
   </div>`
   }
 
-
-
-
-  //generate index.html
+  //generate final index.html
   function generateFinal(teamName, team) {
     return `<!DOCTYPE html>
     <html lang="en">
@@ -91,8 +94,7 @@ function generateHTML(teamName, teamArray){
       
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
       </body>
-    </html>
-  `;
+    </html>`
   }
 }
 module.exports = generateHTML;
